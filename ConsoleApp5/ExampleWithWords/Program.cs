@@ -10,9 +10,9 @@ namespace ExampleWithWords
 	{
 		static void Main(string[] args)
 		{
-			List<string> wordList = new List<string>() { "can", "rat", "pet", "dog" };
+			List<string> wordList = new List<string>() { "can", "cat", "cet", "dog" };
 
-			Console.WriteLine(String.Join(" ", wordList.Where(w => w.ToLower().StartsWith("c"))));
+			Console.WriteLine(wordList.Where(w => w.ToLower().StartsWith("c")).Aggregate((word1, word2) => word1 + " " + word2));
 			Console.ReadKey();
 			
 		}
