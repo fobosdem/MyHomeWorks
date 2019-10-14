@@ -12,7 +12,7 @@ namespace ExampleWithWords
 		{
 			List<string> wordList = new List<string>() { "can", "rat", "pet", "dog" };
 
-			Console.WriteLine(String.Join(" ", wordList.Where(w => w.ToLower()[0] == 'c')));
+			Console.WriteLine(String.Join(" ", wordList.Where(w => w.ToLower().StartsWith("c"))));
 			Console.ReadKey();
 			
 		}

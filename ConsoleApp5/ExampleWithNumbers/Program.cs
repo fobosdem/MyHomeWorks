@@ -26,10 +26,10 @@ namespace ExampleWithNumbers
 			}
 
 			Console.WriteLine("First + member: ");
-			Console.WriteLine(listNumber.Where(n => n > 0).FirstOrDefault());
+			Console.WriteLine(listNumber.FirstOrDefault(n => n > 0));
 
 			Console.WriteLine("First - member: ");
-			Console.WriteLine(listNumber.Where(n => n < 0).FirstOrDefault());
+			Console.WriteLine(listNumber.FirstOrDefault(n => n < 0));
 
 			Console.WriteLine("All %2 numbers: ");
 			foreach (int number in listNumber.Where(n => n % 2 == 0).Distinct().OrderBy(n=>n))
