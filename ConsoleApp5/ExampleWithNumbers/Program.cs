@@ -37,6 +37,14 @@ namespace ExampleWithNumbers
 				Console.WriteLine(number);
 			}
 
+			List<int> reverseListHomework = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8 };
+			int d = 5;
+
+			Console.WriteLine("First number wich is greater then D:");
+			Console.WriteLine(reverseListHomework.FirstOrDefault(n => n > d));
+
+
+
 			Console.ReadKey();
 		}
 	}
