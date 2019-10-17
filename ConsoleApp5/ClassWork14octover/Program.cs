@@ -80,15 +80,22 @@ namespace ClassWork14octover
 				}
 			}
 
-			XmlDocument xmlDocument = new XmlDocument();
-			foreach (var work in workers)
+			using (XmlWriter workersXML = XmlWriter.Create("Output.xml"))
 			{
-				XmlElement worker = xmlDocument.CreateElement("Worker");
-				worker.SetAttribute("Id", work.ID.ToString());
-				XmlElement name = xmlDocument.CreateElement("Name");
-				name.InnerText = work.Name;
-				XmlElement education = xmlDocument.CreateElement("Education");
-				name.InnerText = work.Education;
+				XElement worker = 
+						new XElement("Workers");
+
+				foreach (var work in workers)
+				{
+					worker.Add(
+							new XElement("Worker",
+								new XAttribute("Id", work.ID),
+								new XElement("Name", work.Name),
+								new XElement("Education", work.Education)
+							)
+						);
+				}
+				worker.WriteTo(workersXML);
 			}
 
 			Console.ReadKey();
